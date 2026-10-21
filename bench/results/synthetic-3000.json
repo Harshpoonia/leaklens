@@ -1,0 +1,45 @@
+{
+  "repo": "synthetic (--synthetic 3000 --files 300 --secrets 25)",
+  "commits": 3000,
+  "runs": 3,
+  "ground_truth": 25,
+  "results": {
+    "blob": {
+      "median_s": 0.828,
+      "all_s": [
+        0.744,
+        0.828,
+        0.871
+      ],
+      "bytes_scanned": 34015650,
+      "units": 7861,
+      "secrets_found": 25,
+      "estimated": false
+    },
+    "diff": {
+      "median_s": 1.239,
+      "all_s": [
+        1.239,
+        1.077,
+        1.241
+      ],
+      "bytes_scanned": 1703417,
+      "units": 7878,
+      "secrets_found": 25,
+      "estimated": false
+    },
+    "snapshot": {
+      "median_s": 61.713,
+      "all_s": [
+        52.606,
+        66.297,
+        61.713
+      ],
+      "bytes_scanned": 3872331360,
+      "units": 900000,
+      "secrets_found": 22,
+      "estimated": true
+    }
+  },
+  "environment": "Linux, 2-core Intel Xeon @ 2.10GHz, Python 3.13, git 2.43"
+}

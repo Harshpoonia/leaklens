@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leaklens"
+version = "0.1.0"
+description = "Find, explain and fix leaked API keys anywhere in your git history"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Harsh" }]
+keywords = ["security", "secrets", "git", "api-keys", "secret-scanning", "devsecops"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+    "Topic :: Software Development :: Version Control :: Git",
+]
+dependencies = []  # stdlib + the git binary only
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/leaklens"
+Issues = "https://github.com/YOUR_USERNAME/leaklens/issues"
+Changelog = "https://github.com/YOUR_USERNAME/leaklens/blob/main/CHANGELOG.md"
+
+[project.scripts]
+leaklens = "leaklens.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["leaklens"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

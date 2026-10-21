@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test (${{ matrix.os }}, py${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        include:
+          # Windows matters: it's where the fnmatch/normcase slowdown lived.
+          - os: windows-latest
+            python: "3.12"
+          - os: windows-latest
+            python: "3.14"
+          - os: macos-latest
+            python: "3.14"
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history, so the self-scan below sees every commit
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Configure git for tests
+        run: |
+          git config --global user.email "ci@example.com"
+          git config --global user.name "CI"
+          git config --global init.defaultBranch main
+
+      - name: Install
+        run: pip install -e ".[dev]"
+
+      - name: Tests
+        run: pytest -q
+
+      # Dogfooding: LeakLens must never leak. Exit code 1 here fails the build.
+      - name: Scan this repo's own history
+        run: leaklens scan .
+
+  benchmark-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -e .
+      - name: Small synthetic benchmark
+        run: python bench/benchmark.py --synthetic 500 --files 60 --secrets 10 --runs 1 --snapshot-limit 50

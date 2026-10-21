@@ -1,0 +1,45 @@
+{
+  "repo": "psf/requests @611c616",
+  "commits": 6736,
+  "runs": 3,
+  "ground_truth": null,
+  "results": {
+    "blob": {
+      "median_s": 1.346,
+      "all_s": [
+        2.15,
+        1.346,
+        1.3
+      ],
+      "bytes_scanned": 121452547,
+      "units": 8223,
+      "secrets_found": 1,
+      "estimated": false
+    },
+    "diff": {
+      "median_s": 1.387,
+      "all_s": [
+        1.522,
+        1.387,
+        1.336
+      ],
+      "bytes_scanned": 9893947,
+      "units": 8384,
+      "secrets_found": 1,
+      "estimated": false
+    },
+    "snapshot": {
+      "median_s": 113.989,
+      "all_s": [
+        116.719,
+        113.989,
+        109.82
+      ],
+      "bytes_scanned": 8034886197,
+      "units": 696547,
+      "secrets_found": 1,
+      "estimated": true
+    }
+  },
+  "environment": "Linux, 2-core Intel Xeon @ 2.10GHz, Python 3.13, git 2.43"
+}

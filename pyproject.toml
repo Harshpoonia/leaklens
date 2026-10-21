@@ -25,9 +25,9 @@ classifiers = [
 dependencies = []  # stdlib + the git binary only
 
 [project.urls]
-Homepage = "https://github.com/YOUR_USERNAME/leaklens"
-Issues = "https://github.com/YOUR_USERNAME/leaklens/issues"
-Changelog = "https://github.com/YOUR_USERNAME/leaklens/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/Harshpoonia/leaklens"
+Issues = "https://github.com/Harshpoonia/leaklens/issues"
+Changelog = "https://github.com/Harshpoonia/leaklens/blob/main/CHANGELOG.md"
 
 [project.scripts]
 leaklens = "leaklens.cli:main"

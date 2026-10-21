@@ -1,6 +1,6 @@
 # LeakLens
 
-[![CI](https://github.com/YOUR_USERNAME/leaklens/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/leaklens/actions/workflows/ci.yml)
+[![CI](https://github.com/Harshpoonia/leaklens/actions/workflows/ci.yml/badge.svg)](https://github.com/Harshpoonia/leaklens/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -37,7 +37,7 @@ the history of one of my own projects for almost three years.*
 Requires Python 3.9+ and git. No other dependencies.
 
 ```bash
-pip install git+https://github.com/YOUR_USERNAME/leaklens
+pip install git+https://github.com/Harshpoonia/leaklens
 leaklens scan path/to/your/repo
 ```
 
@@ -108,7 +108,7 @@ detection: **explaining the leak and fixing it**, for people who are new to this
 ## Development
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/leaklens
+git clone https://github.com/Harshpoonia/leaklens
 cd leaklens
 pip install -e '.[dev]'
 pytest

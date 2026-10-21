@@ -6,7 +6,7 @@ Thanks for helping. The most useful contributions are **new provider rules** and
 ## Setup
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/leaklens
+git clone https://github.com/Harshpoonia/leaklens
 cd leaklens
 pip install -e '.[dev]'
 pytest
